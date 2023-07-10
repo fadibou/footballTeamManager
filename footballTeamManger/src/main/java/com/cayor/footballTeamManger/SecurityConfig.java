@@ -13,7 +13,8 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/player").permitAll()
+                .requestMatchers("/api/players").permitAll()
+                .requestMatchers("/api/teams").permitAll()
                 .anyRequest().authenticated()).build();
     }
 }

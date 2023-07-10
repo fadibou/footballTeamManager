@@ -6,17 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/player")
+@RequestMapping(path = "/api/players")
 public class PlayerController {
     PlayerService playerService;
 
- @Autowired
+    @Autowired
     public PlayerController(PlayerService playerService) {
         this.playerService = playerService;
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping
-    public Iterable<Player> getPlayers(){
-     return playerService.getPlayer();
+    public Iterable<Player> getPlayers() {
+        return playerService.getPlayer();
     }
 }
